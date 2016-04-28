@@ -13,6 +13,10 @@ use App\Http\Requests;
 class RubriqueController extends BaseController{
 
 
+    public function detailAcceuil(){
+        return view('Rubriques.Acceuil');
+    }
+
     public function detailRevues(){
         return view('Rubriques.Revues');
     }

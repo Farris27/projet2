@@ -11,21 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('Rubrique/Acceuil');
-});
+Route::get('/',
+    ['as' => 'detailAcceuil',
+    'uses' => 'RubriqueController@detailAcceuil']
+);
 
-Route::get('/revues', function () {
-        ['as' => 'detailRevues',
-        'uses' => 'RubriqueController@detailRevues'];
-});
+Route::get('/revues',
+    ['as' => 'detailRevues',
+    'uses' => 'RubriqueController@detailRevues']
+);
 
-Route::get('/articles', function () {
-        ['as' => 'detailArticles',
-        'uses' => 'RubriqueController@detailArticles'];
-});
+Route::get('/articles',
+    ['as' => 'detailArticles',
+    'uses' => 'RubriqueController@detailArticles']
+);
 
-Route::get('/evenement', function () {
-        ['as' => 'detailEvenement',
-        'uses' => 'RubriqueController@detailEvenement'];
-});
+Route::get('/evenement',
+    ['as' => 'detailEvenement',
+    'uses' => 'RubriqueController@detailEvenement']
+);

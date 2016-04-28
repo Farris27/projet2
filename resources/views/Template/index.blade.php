@@ -38,10 +38,10 @@
                 <div class="nav-wrapper container">
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="left hide-on-med-and-down">
-                        <li><a href="" class="white-text">ACCUEIL</a></li>
-                        <li><a href="" class="white-text">LA REVUE</a></li>
-                        <li><a href="articles.html" class="white-text">PUBLIER UN ARTICLE</a></li>
-                        <li><a href="evenements.html" class="white-text">événements</a></li>
+                        <li><a href="{{ route('detailAcceuil') }}" class="white-text">ACCUEIL</a></li>
+                        <li><a href="{{ route('detailRevues') }}" class="white-text">LA REVUE</a></li>
+                        <li><a href="{{ route('detailArticles') }}" class="white-text">PUBLIER UN ARTICLE</a></li>
+                        <li><a href="{{ route('detailEvenement') }}" class="white-text">événements</a></li>
                     </ul>
 
                     <ul class="right hide-on-med-and-down">
