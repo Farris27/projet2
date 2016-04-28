@@ -50,10 +50,10 @@
                     </ul>
 
                     <ul class="side-nav" id="mobile-demo">
-                        <li><a href="index.html">ACCUEIL</a></li>
-                        <li><a href="revue.html">LA REVUE</a></li>
-                        <li><a href="articles.html">PUBLIER UN ARTICLE</a></li>
-                        <li><a href="evenements.html">événements</a></li>
+                        <li><a href="{{ route('detailAcceuil') }}">ACCUEIL</a></li>
+                        <li><a href="{{ route('detailRevues') }}">LA REVUE</a></li>
+                        <li><a href="{{ route('detailArticles') }}">PUBLIER UN ARTICLE</a></li>
+                        <li><a href="{{ route('detailEvenement') }}">événements</a></li>
                         <li class="light-green darken-3"><a href="#modal0" class="modal-trigger white-text"><img src="{{ asset('media/icons/fa-power.png') }}" style="margin-right: 10px">CONNEXION</a></li>
                         <li class="light-green darken-3"><a href="mon-panier.html" class="white-text"><img src="{{ asset('media/icons/fa-shopping-cart.png') }}" style="margin-right: 10px">MON PANIER</a></li>
                     </ul>
