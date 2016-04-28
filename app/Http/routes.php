@@ -12,5 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Rubrique/Acceuil');
+});
+
+Route::get('/revues', function () {
+        ['as' => 'detailRevues',
+        'uses' => 'RubriqueController@detailRevues'];
+});
+
+Route::get('/articles', function () {
+        ['as' => 'detailArticles',
+        'uses' => 'RubriqueController@detailArticles'];
+});
+
+Route::get('/evenement', function () {
+        ['as' => 'detailEvenement',
+        'uses' => 'RubriqueController@detailEvenement'];
 });
