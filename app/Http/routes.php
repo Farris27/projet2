@@ -30,3 +30,8 @@ Route::get('/evenement',
     ['as' => 'detailEvenement',
     'uses' => 'RubriqueController@detailEvenement']
 );
+
+Route::get('/panier',
+    ['as' => 'detailPanier',
+    'uses' => 'RubriqueController@detailPanier']
+);

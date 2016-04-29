@@ -28,5 +28,8 @@ class RubriqueController extends BaseController{
     public function detailEvenement(){
         return view('Rubriques.Evenements');
     }
-    
+
+    public function detailPanier(){
+        return view('Rubriques.Panier');
+    }
 }

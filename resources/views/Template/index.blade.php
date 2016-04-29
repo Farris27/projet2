@@ -11,27 +11,30 @@
         <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
 
         <!--  Scripts-->
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
         <script src="{{ asset('js/materialize.js') }}"></script>
         <script src="{{ asset('js/init.js') }}"></script>
     </head>
     <body>
 
     <!-- JS -->
-    <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/materialize.js') }}"></script>
     <script>
 
         $(document).ready(function(){
             // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
             $('.modal-trigger').leanModal();
 
-            $('#header').load('{{ asset('modals/modals.html') }}');
+            $('#header').load('{{ asset('modals/modals.blade.php') }}');
         });
 
     </script>
+
+
+
     <div class="bg-grass">
         <header class="navbar-fixed z-depth-2">
+
+            <div id="header"></div>
 
             <!-- NAVIGATION -->
             <nav class="light-green darken-4" role="navigation">
@@ -45,8 +48,8 @@
                     </ul>
 
                     <ul class="right hide-on-med-and-down">
-                        <li class="light-green darken-3"><a href="#modal0" class="modal-trigger white-text"><img src="{{ asset('media/icons/fa-power.png') }}" style="margin-right: 10px">CONNEXION</a></li>
-                        <li class="light-green darken-3" style="margin-left: 5px"><a href="mon-panier.html" class="white-text"><img src="{{ asset('media/icons/fa-shopping-cart.png') }}" style="margin-right: 10px">MON PANIER</a></li>
+                        <li class="light-green darken-3"><a href="#modal1" class="modal-trigger white-text"><img src="{{ asset('media/icons/fa-power.png') }}" style="margin-right: 10px">INSCRIPTION</a></li>
+                        <li class="light-green darken-3" style="margin-left: 5px"><a href="{{ route('detailEvenement') }}" class="white-text"><img src="{{ asset('media/icons/fa-shopping-cart.png') }}" style="margin-right: 10px">MON PANIER</a></li>
                     </ul>
 
                     <ul class="side-nav" id="mobile-demo">
