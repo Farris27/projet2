@@ -8445,7 +8445,7 @@ a.waves-effect .waves-ripple {
   float: right;
   margin: 6px 0;
 }
-
+/*
 .lean-overlay {
   position: fixed;
   z-index: 999;
@@ -8459,7 +8459,7 @@ a.waves-effect .waves-ripple {
   display: none;
   will-change: opacity;
 }
-
+*/
 .modal.modal-fixed-footer {
   padding: 0;
   height: 70%;
