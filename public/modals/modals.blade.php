@@ -33,7 +33,7 @@
 
 <!-- POPUP INSCRIPTION -->
 
-    <div id="modal1" class="modal modal-fixed-footer">
+    <div id="modal1" class="modal modal-fixed-footer" style="z-index:1!important;">
         <div class="modal-content">
             <div class="row">
                 <div class="col s6">
@@ -208,16 +208,3 @@
     
     <!-- FIN -->
     
-    <script>
-        
-        $(document).ready(function(){
-            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-            $('.modal-trigger').leanModal();
-            
-            $('.modal-close').click(function(){
-                $('.modal').closeModal();
-                $('.lean-overlay').css({display:'none'});
-            });
-        });
-
-    </script>
