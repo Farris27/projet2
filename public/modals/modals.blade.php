@@ -89,7 +89,7 @@
         </div>
         <div class="modal-footer left">
             <a href="#modal4" class="modal-trigger modal-action waves-effect waves-green btn-flat">Je m'inscris</a>
-            <a href="{{ route('detailAcceuil') }}" class="modal-action modal-close waves-effect waves-green btn-flat left">Retour</a>
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat left">Retour</a>
         </div>
     </div>
     
@@ -202,7 +202,7 @@
         </div>
         <div class="modal-footer left">
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Payez</a>
-            <a href="{{ route('detailAcceuil') }}" class="modal-action modal-close waves-effect waves-green btn-flat left">retour</a>
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat left">retour</a>
         </div>
     </div>
     
