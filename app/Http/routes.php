@@ -18,7 +18,7 @@ Route::get('/',
 
 Route::get('/revues',
     ['as' => 'detailRevues',
-    'uses' => 'RubriqueController@detailRevues']
+    'uses' => 'RevueController@detailRevues']
 );
 
 Route::get('/articles',

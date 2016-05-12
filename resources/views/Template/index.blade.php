@@ -25,10 +25,6 @@
             $('.modal-trigger').leanModal();
 
 
-
-            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-
-
             $('.modal-close').click(function(){
                 $('.modal').closeModal();
                 $('.lean-overlay').css({display:'none'});
