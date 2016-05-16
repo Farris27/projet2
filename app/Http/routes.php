@@ -31,7 +31,48 @@ Route::get('/evenement',
     'uses' => 'RubriqueController@detailEvenement']
 );
 
-Route::get('/panier',
-    ['as' => 'detailPanier',
-    'uses' => 'RubriqueController@detailPanier']
-);
+
+
+/*
+*
+*
+ * PANIER D'ACHAT
+*/
+// PAnier d'achat
+Route::get('panier/vue',[
+    'as' => 'paniervue',
+    'uses' =>'PanierController@show'
+]);
+
+// Ajout d'un item
+Route::get('panier/add/{article}',[
+    'as' => 'panieradd',
+    'uses' =>'PanierController@add'
+]);
+
+Route::get('panier/delete/{article}',[
+    'as' => 'panierdel',
+    'uses' =>'PanierController@delete'
+]);
+Route::get('panier/vide',[
+    'as' => 'panier-vide',
+    'uses' =>'PanierController@vide'
+]);
+Route::get('panier/update/{article}/{quantity?}',[
+    'as' => 'panier-actu',
+    'uses' =>'PanierController@up'
+]);
+
+/*
+ * Paypal
+ */
+// Envoi de notre panier à paypal
+Route::get('payment', array(
+    'as' => 'payment',
+    'uses' => 'PaypalController@postPayment',
+));
+// statut de notre paiement à paypal
+Route::get('payment/status', array(
+    'as' => 'payment.status',
+    'uses' => 'PaypalController@getPaymentStatus',
+));
