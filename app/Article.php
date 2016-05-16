@@ -12,7 +12,13 @@ class Article extends Model
     ];
 
     public function listeRevues(){
-        return $this->belongsToMany('App\Revue');
+        return $this->belongsToMany('App\Revue','articles_revues','articleID','revueID');
+    }
+
+    public function listeTags(){
+
+        return $this->belongsToMany('App\Tag','tags_articles','tagID','articleID');
+
     }
 
 }

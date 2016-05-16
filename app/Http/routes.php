@@ -31,6 +31,11 @@ Route::get('/evenement',
     'uses' => 'RubriqueController@detailEvenement']
 );
 
+Route::post('/recherche',
+    ['as' => 'Recherche',
+    'uses' => 'RechercheController@recherche']
+);
+
 
 
 /*

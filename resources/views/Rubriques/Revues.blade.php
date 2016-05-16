@@ -10,22 +10,31 @@
 
                     <section class="col s8">
 
-                        @foreach($revues as $revue)
-                            <div class="card col s12">
-                                <div class="card-image waves-effect waves-block waves-light col s4">
-                                    <img class="activator margin-10" src="media/revue-01.jpg">
-                                </div>
-                                <div class="card-content col s8">
-                                    <span class="card-title activator grey-text text-darken-4">LAMBILLIONEA</span>
-                                    <p>Fascicule: {{ $revue->fascicule }}, Tome: {{ $revue->tome }}, Année: {{ $revue->annee }}</p>
-                                    <span class="card-price grey-text text-lighten-1">50€</span>
-                                    <div class="card-action">
-                                        <a href="{{route('panieradd',$revue->id)}}">AJOUTER AU PANIER</a>
-                                        <a class="modal-trigger right" href="#revue{{ "$revue->id" }}">EN SAVOIR +</a>
+                        @if(!empty($results))
+                            <a class="card col s5 center-align" href="{{ route('detailRevues') }}"><span class="card-title">Revenir aux revue</span></a><br/><br/><br/>
+                            <h5>Recherche :</h5><br/>
+                            @foreach($results as $result)
+                                <p class="card col s12">Titre de l'article : {{ $result->titre }}</p>
+                            @endforeach
+                        @else
+                            @foreach($revues as $revue)
+                                <div class="card col s12">
+                                    <div class="card-image waves-effect waves-block waves-light col s4">
+                                        <img class="activator margin-10" src="media/revue-01.jpg">
+                                    </div>
+                                    <div class="card-content col s8">
+                                        <span class="card-title activator grey-text text-darken-4">LAMBILLIONEA</span>
+                                        <p>Fascicule: {{ $revue->fascicule }}, Tome: {{ $revue->tome }}, Année: {{ $revue->annee }}</p>
+                                        <span class="card-price grey-text text-lighten-1">50€</span>
+                                        <div class="card-action">
+                                            <a href="{{route('panieradd',$revue->id)}}">AJOUTER AU PANIER</a>
+                                            <a class="modal-trigger right" href="#revue{{ "$revue->id" }}">EN SAVOIR +</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        @endif
+
 
                     </section>
 
@@ -35,11 +44,12 @@
 
                         <nav>
                             <div class="nav-wrapper">
-                                <form>
+                                <form method="POST" action="{{ action('RechercheController@recherche') }}" accept-charset="UTF-8">
                                     <div class="input-field white">
-                                        <input id="search" type="search" placeholder="Recherchez" required>
+                                        <input name="search" id="search" type="search" placeholder="Recherchez" required>
                                         <label for="search"><i class="material-icons grey-text text-darken-3">search</i></label>
                                         <i class="material-icons">close</i>
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                                     </div>
                                 </form>
                             </div>
@@ -77,10 +87,15 @@
                         </form>
 
                     </aside>
-
+                @if(empty($results))
                     <div class="col s12">
                         {!! $revues->links() !!}
                     </div>
+                @else
+                    <div class="col s12">
+                        {!! $results->links() !!}
+                    </div>
+                @endif
                 </div>
             </div>
         </div>
