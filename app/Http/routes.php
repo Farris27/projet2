@@ -37,10 +37,17 @@ Route::post('/recherche',
 );
 
 
+/*
+ * INSCRIPTION
+ */
+
+Route::post('inscription',
+    ['as' => 'inscription',
+    'uses' =>'EmailController@inscription']
+);
+
 
 /*
-*
-*
  * PANIER D'ACHAT
 */
 // PAnier d'achat

@@ -121,37 +121,34 @@
 
                         <div class="col s6">
                             <h4 class="josefin-bold">INSCRIPTION</h4>
-                            <form>
+                            <form method="POST" action="{{ action('EmailController@inscription') }}" accept-charset="UTF-8">
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <input id="first_name" type="text" class="validate">
+                                        <input name="first_name" id="first_name" type="text" class="validate">
                                         <label for="first_name">Votre prénom</label>
                                     </div>
                                     <div class="input-field col s6">
-                                        <input id="last_name" type="text" class="validate">
+                                        <input name="last_name" id="last_name" type="text" class="validate">
                                         <label for="last_name">Votre nom</label>
                                     </div>
 
-                                    <div class="input-field col s12 grey-text">
-                                        <input id="date" type="date" class="validate" >
-                                        <label for="date"></label>
-                                    </div>
-
                                     <div class="input-field col s12">
-                                        <input id="address" type="text" class="validate">
+                                        <input name="address" id="address" type="text" class="validate">
                                         <label for="address">Votre adresse postale</label>
                                     </div>
 
                                     <div class="input-field col s12">
-                                        <input id="password" type="password" class="validate">
-                                        <label for="password">Votre mot de passe</label>
+                                        <input name="email" id="email" type="email" class="validate">
+                                        <label for="email">Votre Email</label>
                                     </div>
 
                                     <div class="input-field col s12">
-                                        <input id="email" type="email" class="validate">
-                                        <label for="email">Votre Email</label>
+                                        <input name="pays" id="pays" type="text" class="validate">
+                                        <label for="pays">Votre Pays</label>
                                     </div>
                                 </div>
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                                <input class="btn" type="submit">
                             </form>
                         </div>
                     </div>
