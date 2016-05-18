@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Revue extends Model
 {
-
+    protected $table = 'revues';
     protected $fillable = [
         'id', 'annee', 'fascicule', 'couverture', 'tome'
     ];

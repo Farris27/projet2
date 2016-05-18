@@ -81,3 +81,8 @@ Route::get('payment/status', array(
     'as' => 'payment.status',
     'uses' => 'PaypalController@getPaymentStatus',
 ));
+
+// Connexion pour modification de la table evenement
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
