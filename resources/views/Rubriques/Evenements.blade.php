@@ -27,24 +27,16 @@
                     </thead>
 
                     <tbody>
+                    @foreach($evenements as $evenement)
                     <tr>
-                        <td class="josefin-bold">20 mars 2016</td>
+                        <td class="josefin-bold">{{ $evenement->datePublication }}</td>
                         <td>
-                            <h5 class="josefin-regular">18ème Bourse d’Insectes de Mons</h5>
-                            <p>Ecole Provinciale “Jean d’Avesnes„
-                                <br>Adresse : Avenue du Gouverneur Emile Cornez 1  7022 Mons, Belgique</p>
-                            <p>Contact Email : <a href="#">contact@kiwanismons-borinage.be</a></p>
+                            <h5 class="josefin-regular">{{ $evenement->titre }}</h5>
+                            {{ $evenement->texte }}
                         </td>
                     </tr>
-                    <tr>
-                        <td class="josefin-bold">23 octobre 2016</td>
-                        <td>
-                            <h5 class="josefin-regular">INSECTORAMA 32 (Bourse entomologique de Seraing)</h5>
-                            <p>Athénée “Air Pur„
-                                <br>Adresse : Rue des Nations Unies 1, B-4100 Seraing, Belgique</p>
-                            <p>Contact: E-mail: <a href="#">insectoramaseraing@gmail.com</a> - Facebook: <a href="#">www.facebook.com/insectoramaseraing</a></p>
-                        </td>
-                    </tr>
+                    @endforeach
+
                     </tbody>
                 </table>
 

@@ -8,7 +8,8 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    <p> Bienvenu sur notre backoffice!</p>
+                    <a href="{{ url('/admin/liste') }}">Gestion des événements</a>
                 </div>
             </div>
         </div>

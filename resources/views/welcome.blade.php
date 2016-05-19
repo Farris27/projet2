@@ -8,7 +8,9 @@
                 <div class="panel-heading">Welcome</div>
 
                 <div class="panel-body">
-                    Your Application's Landing Page.
+                   <p> Bienvenu sur notre backoffice!</p>
+                   <a href="{{ url('/admin/liste') }}">Gestion des événements</a>
+
                 </div>
             </div>
         </div>

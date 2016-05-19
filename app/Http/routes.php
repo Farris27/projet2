@@ -28,7 +28,7 @@ Route::get('/articles',
 
 Route::get('/evenement',
     ['as' => 'detailEvenement',
-    'uses' => 'RubriqueController@detailEvenement']
+    'uses' => 'EvenementController@liste']
 );
 
 
@@ -92,8 +92,27 @@ Route::get('payment/status', array(
     'as' => 'payment.status',
     'uses' => 'PaypalController@getPaymentStatus',
 ));
+// Après avoir effectué le paiement Paypal pour l'abonnement on rédirectionne vers cette route-ci
+Route::get('payment-abonnement/status', array(
+    'as' => 'payment.abo.status',
+    'uses' => 'PaypalController@getPaymentAboStatus',
+));
 
+//Requête paypal pour la cotisation (abonnement revue)
+Route::get('payment-abonnement/{prix}', array(
+    'as' => 'paymentAbo',
+    'uses' => 'PaypalController@postPaymentAbo',
+));
 // Connexion pour modification de la table evenement
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/admin', 'HomeController@index');
+
+Route::get('/admin/liste','EvenementController@listeadmin');
+
+Route::post('/admin/liste',array('as'=>'adminliste', 'uses'=>'EvenementController@post'));
+
+Route::get('admin/liste/{id}', array(
+    'as' => 'evenementmodif',
+    'uses' => 'EvenementController@modifliste',
+));

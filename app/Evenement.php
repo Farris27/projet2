@@ -12,5 +12,5 @@ class Evenement extends Model
         'id', 'titre', 'texte', 'datePublication', 'image'
     ];
 
-    
+    public $timestamps = false;
 }
