@@ -12,7 +12,7 @@ class RechercheController extends Controller
 {
 
 
-    public function recherche(Request $request) {
+    public function rechercheText(Request $request) {
 
         $q = $request->input('search');
 
@@ -20,12 +20,28 @@ class RechercheController extends Controller
 
         foreach($searchTerms as $term)
         {
-            $results = Article::where('titre', 'LIKE', '%'. $term .'%')->paginate(5);
+            $results = Article::where('titre', 'LIKE', '%'. $term .'%')
+                            ->orWhere('auteur', 'LIKE', '%'. $term .'%')
+                            ->orWhere('pays', 'LIKE', '%'. $term .'%')
+                            ->orWhere('numeroPage', 'LIKE', '%'. $term .'%')->paginate(5);
         }
 
         return view('Revues.detail',['results'=>$results]);
 
     }
+
+
+    public function rechercheAnnee(Request $request) {
+
+        $annee = $request->input('annee');
+
+        $revues = Revue::where('annee', $annee)->paginate(5);
+
+        return view('Revues.detail',['revues'=>$revues]);
+
+    }
+
+
 
 
 
