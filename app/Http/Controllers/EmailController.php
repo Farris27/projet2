@@ -24,7 +24,7 @@ class EmailController extends Controller
 
         });
 
-        return view('Rubriques.Acceuil');
+        return back();
 
     }
 

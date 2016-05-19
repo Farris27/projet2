@@ -24,9 +24,10 @@
                         </div>
                     </div>
                     <div class="col s9">
+
                         @foreach($revue->listeArticles as $article)
 
-                            <p>{{$article->auteur}} , {{ $article->titre}} , {{ $article->pays}} : {{ $article->numeroPage}}</p>
+                            <p>{{$article->auteur}} , {{ $article->titre}} , {{ $article->pays}} : {{ $article->numeroPage}} {{ $article->id }} </p>
 
                         @endforeach
                     </div>

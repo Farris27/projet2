@@ -16,9 +16,7 @@ class RevueController extends Controller
         
         $revues = Revue::paginate(3);
 
-        $articles = Article::all();
-
-        return view('Revues.detail',['revues'=>$revues, 'articles'=>$articles]);
+        return view('Revues.detail',['revues'=>$revues]);
 
     }
 

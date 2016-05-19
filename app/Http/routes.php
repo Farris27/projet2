@@ -31,6 +31,10 @@ Route::get('/evenement',
     'uses' => 'RubriqueController@detailEvenement']
 );
 
+
+/*
+ * MOTEUR DE RECHERCHE
+ */
 Route::post('/recherche',
     ['as' => 'Recherche',
     'uses' => 'RechercheController@recherche']

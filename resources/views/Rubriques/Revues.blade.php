@@ -59,29 +59,29 @@
                             <h5 class="josefin-bold">Options de tri</h5>
                         </div>
 
-                        <form action="#">
+                        <form  method="POST" action="{{ action('RechercheController@recherche') }}">
                             <p>
-                                <input name="group1" type="radio" id="test1" />
+                                <input name="annee" type="radio" id="test1" value="2016" />
                                 <label for="test1">Année 2016</label>
                             </p>
                             <p>
-                                <input name="group1" type="radio" id="test2" />
+                                <input name="annee" type="radio" id="test2" value="2015" />
                                 <label for="test2">Année 2015</label>
                             </p>
                             <p>
-                                <input name="group1" type="radio" id="test3" />
+                                <input name="annee" type="radio" id="test3" value="2014" />
                                 <label for="test3">Année 2014</label>
                             </p>
                             <p>
-                                <input name="group1" type="radio" id="test4" />
+                                <input name="annee" type="radio" id="test4" value="2013" />
                                 <label for="test4">Année 2013</label>
                             </p>
                             <p>
-                                <input name="group1" type="radio" id="test5" />
+                                <input name="annee" type="radio" id="test5" value="2012" />
                                 <label for="test5">Année 2012</label>
                             </p>
                             <p>
-                                <input name="group1" type="radio" id="test6" />
+                                <input name="annee" type="radio" id="test6" value="2011" />
                                 <label for="test6">Année 2011</label>
                             </p>
                         </form>

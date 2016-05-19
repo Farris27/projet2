@@ -124,26 +124,26 @@
                             <form method="POST" action="{{ action('EmailController@inscription') }}" accept-charset="UTF-8">
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <input name="first_name" id="first_name" type="text" class="validate">
+                                        <input name="first_name" id="first_name" type="text" class="validate" requiredZ>
                                         <label for="first_name">Votre prénom</label>
                                     </div>
                                     <div class="input-field col s6">
-                                        <input name="last_name" id="last_name" type="text" class="validate">
+                                        <input name="last_name" id="last_name" type="text" class="validate" required>
                                         <label for="last_name">Votre nom</label>
                                     </div>
 
                                     <div class="input-field col s12">
-                                        <input name="address" id="address" type="text" class="validate">
+                                        <input name="address" id="address" type="text" class="validate" required>
                                         <label for="address">Votre adresse postale</label>
                                     </div>
 
                                     <div class="input-field col s12">
-                                        <input name="email" id="email" type="email" class="validate">
+                                        <input name="email" id="email" type="email" class="validate" required>
                                         <label for="email">Votre Email</label>
                                     </div>
 
                                     <div class="input-field col s12">
-                                        <input name="pays" id="pays" type="text" class="validate">
+                                        <input name="pays" id="pays" type="text" class="validate" required>
                                         <label for="pays">Votre Pays</label>
                                     </div>
                                 </div>
@@ -180,27 +180,18 @@
                         <form class="col s12">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="job" type="text" class="validate">
+                                    <input id="job" type="text" class="validate" required>
                                     <label for="job">Sujet de l'article</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="password" type="password" class="validate">
+                                    <input id="password" type="password" class="validate" required>
                                     <label for="password">Nom de l'auteur</label>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="file-field input-field">
-                                    <div class="btn btn-bleu">
-                                        <span>Votre article</span>
-                                        <input type="file">
-                                    </div>
-                                    <div class="file-path-wrapper">
-                                        <input id="test" name="test" class="file-path validate" type="text">
-                                        <label for="test"> test</label>
-                                    </div>
-                                </div>
+                                <input type="file" name="article" required>
                             </div>
                         </form>
                     </div>
