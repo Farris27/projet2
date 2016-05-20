@@ -24,6 +24,14 @@
         <p>{{ $evenement->texte }}</p>
         <p>{{ $evenement->datePublication }}</p>
         <img src="{{ asset($evenement->image) }}"  alt="{{ $evenement->image }}"/>
-        <a href="{{route('evenementmodif',$evenement->id)}}">Modifier</a> </li>
+        <a href="{{route('evenementmodif',$evenement->id)}}">Modifier</a>
+        <div class="col-md-6 text-right">
+            <form action="{{ route('evenementdel',$evenement->id) }}" method="post">
+                {{csrf_field()}}
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value=" supprimer cet événement ?">
+            </form>
+
+        </div>
 @endforeach
     @endsection

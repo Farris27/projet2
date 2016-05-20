@@ -110,16 +110,26 @@ Route::get('payment-abonnement/{prix}', array(
     'as' => 'paymentAbo',
     'uses' => 'PaypalController@postPaymentAbo',
 ));
+
+
 // Connexion pour modification de la table evenement
 Route::auth();
 
 Route::get('/admin', 'HomeController@index');
 
-Route::get('/admin/liste','EvenementController@listeadmin');
+Route::get('/admin/liste','HomeController@listeadmin');
 
-Route::post('/admin/liste',array('as'=>'adminliste', 'uses'=>'EvenementController@post'));
+Route::post('/admin/liste',array('as'=>'adminliste', 'uses'=>'HomeController@post'));
 
-Route::get('admin/liste/{id}', array(
+Route::get('admin/liste/edit/{id}', array(
     'as' => 'evenementmodif',
-    'uses' => 'EvenementController@modifliste',
+    'uses' => 'HomeController@edit',
+));
+Route::put('admin/liste/edit/fait/{id}', array(
+    'as' => 'evenementmodifier',
+    'uses' => 'HomeController@update',
+));
+Route::delete('admin/liste/sup/{id}', array(
+    'as' => 'evenementdel',
+    'uses' => 'HomeController@delete',
 ));
