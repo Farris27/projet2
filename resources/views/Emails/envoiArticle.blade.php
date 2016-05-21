@@ -1,4 +1,4 @@
-<?php $message->to('test@mail.com'); ?>
+
 
 <h1>Nouvel Article</h1>
 

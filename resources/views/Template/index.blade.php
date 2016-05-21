@@ -91,17 +91,17 @@
                             <form method="POST" action="{{ action('EmailController@inscription') }}" accept-charset="UTF-8">
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <input name="first_name" id="first_name" type="text" class="validate" requiredZ>
-                                        <label for="first_name">Votre prénom</label>
+                                        <input name="prenom" id="prenom" type="text" class="validate" requiredZ>
+                                        <label for="prenom">Votre prénom</label>
                                     </div>
                                     <div class="input-field col s6">
-                                        <input name="last_name" id="last_name" type="text" class="validate" required>
-                                        <label for="last_name">Votre nom</label>
+                                        <input name="nom" id="nom" type="text" class="validate" required>
+                                        <label for="nom">Votre nom</label>
                                     </div>
 
                                     <div class="input-field col s12">
-                                        <input name="address" id="address" type="text" class="validate" required>
-                                        <label for="address">Votre adresse postale</label>
+                                        <input name="addresse" id="addresse" type="text" class="validate" required>
+                                        <label for="addresse">Votre adresse postale</label>
                                     </div>
 
                                     <div class="input-field col s12">
@@ -122,7 +122,7 @@
 
                 </div>
                 <div class="modal-footer left">
-                    <a href="#modal4" class="modal-trigger modal-action waves-effect waves-green btn-flat">Je m'inscris</a>
+
                     <a href="" class="modal-action modal-close waves-effect waves-green btn-flat left">Retour</a>
                 </div>
             </div>
@@ -163,7 +163,7 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::token() !!}
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                 </div>
                 <div class="modal-footer left">
                     <input class="modal-action modal-close waves-effect waves-green btn-flat" type="submit" value="Je propose">

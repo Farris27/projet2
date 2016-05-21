@@ -57,6 +57,7 @@ class EmailController extends Controller
                     'as' => $fichier->getClientOriginalName(),
                     'mime' => $fichier->getMimeType())
             );
+            $message->to('benfarris40@gmail.com');
 
         });
 
