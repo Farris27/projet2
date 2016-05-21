@@ -1,9 +1,12 @@
-<?php $message->to('test@mail.com'); ?>
+<html>
 
 <h1>Abonnement</h1>
 
-<p>Nom :{{ $nom }}</p>
-<p>Prenom :{{ $prenom }}</p>
-<p>Adresse :{{ $adresse }}</p>
-<p>Email :{{ $email }}</p>
-<p>Pays :{{ $pays }}</p>
+<p>Nom :{{ $abo['nom']}}</p>
+<p>Prenom :{{ $abo['prenom'] }}</p>
+<p>Adresse :{{ $abo['adresse'] }}</p>
+<p>Email :{{ $abo['email'] }}</p>
+<p>Pays :{{ $abo['pays'] }}</p>
+
+
+</html>
