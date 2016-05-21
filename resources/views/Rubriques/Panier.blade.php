@@ -28,7 +28,8 @@
 
 
                     </section>
-
+                    @if(session('status')) <h1>{{ session('status') }}</h1>
+                    @endif
                     <aside class="col s4">
                         <div class="card">
                             <div class="card-content">
@@ -37,7 +38,7 @@
                             </div>
                             <div class="card-action">
                                 <a href="{{ route('detailRevues') }}" class="modal-trigger">Continuer la commande</a>
-                                <a href="{{ route('payment') }}" class="modal-trigger">Passez la commande</a>
+                                <a href="{{ route('formulaire') }}" class="modal-trigger">Passez la commande</a>
 
                             </div>
                         </div>

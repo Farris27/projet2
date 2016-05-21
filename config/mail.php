@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'local@dev.com', 'name' => null],
+    'from' => ['address' => 'admin@lambo.be', 'name' => 'laravel.dev'],
 
     /*
     |--------------------------------------------------------------------------

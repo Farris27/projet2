@@ -18,7 +18,7 @@ class EvenementController extends Controller
 
     }
 
-   
+   // Permet d'acceder à la liste des événéments pour la modifications 
     
     public function liste()
     {

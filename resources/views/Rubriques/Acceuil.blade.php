@@ -1,7 +1,8 @@
 @extends('../Template.index')
 
 @section('contenu')
-
+    @if(session('status')) <h1>{{ session('status') }}</h1>
+    @endif
     <div id="index-banner-1" class="parallax-container parallax-index">
         <div class="section no-pad-bot">
             <div class="container">
