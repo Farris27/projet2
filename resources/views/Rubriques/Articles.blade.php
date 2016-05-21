@@ -103,10 +103,7 @@
 
                     <div class='col s4 center' style='margin-top: 0.5rem'>
                         <div class='col s12'>
-                            <a href="#modal2" class="btn btn-large btn-bleu modal-trigger col s8">Proposer un article</a>
-                        </div>
-                        <div class='col s12'>
-                            <a href="#modal0" class="btn btn-large btn-bleu modal-trigger col s8">Connectez-vous</a>
+                            <a href="#modal2" class="btn btn-large btn-bleu modal-trigger col s9">Proposer un article</a>
                         </div>
                     </div>
                 </div>

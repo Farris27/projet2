@@ -68,38 +68,6 @@
                 </div>
 
             </nav>
-            <!-- POPUP CONNEXION -->
-
-            <div id="modal0" class="modal modal-fixed-footer">
-                <div class="modal-content center">
-                    <div class="row">
-                        <div class="col s12">
-                            <h4 class="josefin-bold">CONNEXION</h4>
-                            <p>Vous êtes déjà membre adhérent de Lambillionea?<br>Connectez vous sans plus attendre.</p>
-                            <form>
-                                <div class="row">
-                                    <div class="input-field">
-                                        <input id="job" type="text" class="validate">
-                                        <label for="job">Votre pseudo</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field">
-                                        <input id="password" type="password" class="validate">
-                                        <label for="password">Votre mot de passe</label>
-                                    </div>
-                                </div>
-                            </form>
-                            <p>Vous n'êtes pas encore membre adhérent ?<a href='#modal1' class='modal-trigger bleu'> INSCRIVEZ-VOUS</a></p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="modal-footer left">
-                    <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Envoyez</a>
-                    <a href="{{ route('detailAcceuil') }}" class="modal-action modal-close waves-effect waves-green btn-flat left">Retour</a>
-                </div>
-            </div>
 
             <!-- POPUP INSCRIPTION -->
 
@@ -156,7 +124,7 @@
                 </div>
                 <div class="modal-footer left">
                     <a href="#modal4" class="modal-trigger modal-action waves-effect waves-green btn-flat">Je m'inscris</a>
-                    <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat left">Retour</a>
+                    <a href="" class="modal-action modal-close waves-effect waves-green btn-flat left">Retour</a>
                 </div>
             </div>
 
@@ -165,6 +133,7 @@
             <!-- POPUP ARTICLE -->
 
             <div id="modal2" class="modal modal-fixed-footer">
+                {!! Form::open(array('action' => 'EmailController@envoiArticle', 'method' => 'POST', 'files' => true)) !!}
                 <div class="modal-content">
                     <div class="row">
                         <div class="col s12">
@@ -177,30 +146,34 @@
                             </p>
                         </div>
 
-                        <form class="col s12">
+
+                        <div class="col s12">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="job" type="text" class="validate" required>
-                                    <label for="job">Sujet de l'article</label>
+                                    {!! form::label('titre', "Sujet de l'article", ['class' => 'validate', 'required' => 'required']) !!}
+                                    {!! form::text('titre') !!}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="password" type="password" class="validate" required>
-                                    <label for="password">Nom de l'auteur</label>
+                                    {!! form::label('auteur', "Nom de l'auteur", ['class' => 'validate', 'required' => 'required']) !!}
+                                    {!! form::text('auteur') !!}
                                 </div>
                             </div>
                             <div class="row">
-                                <input type="file" name="article" required>
+                                {!! form::file('fichier') !!}
                             </div>
-                        </form>
+                            {{ Form::token() }}
+                        </div>
+
                     </div>
 
                 </div>
                 <div class="modal-footer left">
-                    <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Je propose</a>
-                    <a href="{{ route('detailAcceuil') }}" class="modal-action modal-close waves-effect waves-green btn-flat left">Retour</a>
+                    <input class="modal-action modal-close waves-effect waves-green btn-flat" type="submit" value="Je propose">
+                    <a href="" class="modal-action modal-close waves-effect waves-green btn-flat left">Retour</a>
                 </div>
+                {!! Form::close() !!}
             </div>
 
             <!-- FIN -->
@@ -260,8 +233,8 @@
 
                 </div>
                 <div class="modal-footer left">
-                    <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Payez</a>
-                    <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat left">retour</a>
+                    <a href="" class="modal-action modal-close waves-effect waves-green btn-flat">Payez</a>
+                    <a href="" class="modal-action modal-close waves-effect waves-green btn-flat left">retour</a>
                 </div>
             </div>
 

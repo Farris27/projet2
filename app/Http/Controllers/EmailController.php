@@ -28,4 +28,25 @@ class EmailController extends Controller
 
     }
 
+    public function envoiArticle(Request $request){
+
+        $titre = $request->input('titre');
+        $auteur = $request->input('auteur');
+        $fichier = $request->file('fichier');
+
+        Mail::send('Emails.envoiArticle', ['titre' => $titre, 'auteur' => $auteur, 'fichier' => $fichier], function ($message) use($fichier){
+
+            $message->subject('Nouvel article');
+
+            $message->attach($fichier->getRealPath(), array(
+                    'as' => $fichier->getClientOriginalName(),
+                    'mime' => $fichier->getMimeType())
+            );
+
+        });
+
+        return back();
+
+    }
+
 }

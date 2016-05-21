@@ -17,22 +17,22 @@
  */
 Route::get('/',
     ['as' => 'detailAcceuil',
-        'uses' => 'RubriqueController@detailAcceuil']
+    'uses' => 'RubriqueController@detailAcceuil']
 );
 
 Route::get('/revues',
     ['as' => 'detailRevues',
-        'uses' => 'RevueController@detailRevues']
+    'uses' => 'RevueController@detailRevues']
 );
 
 Route::get('/articles',
     ['as' => 'detailArticles',
-        'uses' => 'RubriqueController@detailArticles']
+    'uses' => 'RubriqueController@detailArticles']
 );
 
 Route::get('/evenement',
     ['as' => 'detailEvenement',
-        'uses' => 'EvenementController@liste']
+    'uses' => 'EvenementController@liste']
 );
 
 
@@ -41,12 +41,13 @@ Route::get('/evenement',
  */
 Route::post('/recherche',
     ['as' => 'Recherche',
-        'uses' => 'RechercheController@rechercheText']
+    'uses' => 'RechercheController@rechercheText']
 );
 
 Route::post('/revues',
     [ 'as' => 'revuesParAnnee',
-        'uses' => 'RechercheController@rechercheAnnee' ]);
+    'uses' => 'RechercheController@rechercheAnnee' ]);
+
 
 /*
  * INSCRIPTION
@@ -54,7 +55,17 @@ Route::post('/revues',
 
 Route::post('inscription',
     ['as' => 'inscription',
-        'uses' =>'EmailController@inscription']
+    'uses' =>'EmailController@inscription']
+);
+
+
+/*
+ * ENVOI DE L'ARTICLE
+ */
+
+Route::post('envoiArticle',
+    ['as' => 'envoiArticle',
+    'uses' =>'EmailController@envoiArticle']
 );
 
 
